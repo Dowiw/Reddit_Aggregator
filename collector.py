@@ -36,5 +36,5 @@ for search in searches:
             })
 
 # save data to JSON
-with open('reddit_germany_berlin_joblife.json', 'w', encoding='utf-8') as f:
+with open('student_job_hunt_berlin.json', 'w', encoding='utf-8') as f:
     json.dump(posts, f, indent=2, ensure_ascii=False)

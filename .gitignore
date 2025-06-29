@@ -1,3 +1,4 @@
 .env
 praw.ini
-reddit_germany_berlin_joblife.json
+student_job_hunt_berlin.json
+student_job_hunt_berlin_cleaned.json
