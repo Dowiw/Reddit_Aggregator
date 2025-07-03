@@ -11,8 +11,8 @@ def clean_text(text):
     text = text.lower().strip()
     # Remove URLs
     text = re.sub(r"http\S+", "", text)
-    # Remove emojis (basic unicode range)
-    text = re.sub(r"[\U00010000-\U0010ffff]", "", text)
+    # Keep only ASCII characters
+    text = text.encode("ascii", "ignore").decode("ascii")
     # Remove stopwords
     text = " ".join([w for w in text.split() if w not in STOPWORDS])
     return text
@@ -26,7 +26,7 @@ for line in sys.stdin:
         # Normalize text fields
         post['title'] = clean_text(post.get('title', ''))
         post['selftext'] = clean_text(post.get('selftext', ''))
-        
+        post['comments'] = [clean_text(comment) for comment in post.get('comments', [])]
         # Remove empty posts after cleaning
         if not post['selftext'] and not post['title']:
             continue

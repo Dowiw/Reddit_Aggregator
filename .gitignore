@@ -1,4 +1,4 @@
 .env
 praw.ini
-student_job_hunt_berlin.json
-student_job_hunt_berlin_cleaned.json
+job_berlin.json
+job_berlin_cleaned.json

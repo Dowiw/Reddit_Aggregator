@@ -1,6 +1,8 @@
 import praw
 import json
 
+# Search for job posts in Berlin on Reddit using PRAW (Python Reddit API Wrapper)
+
 # open the reddit api using praw
 reddit = praw.Reddit()
 # note: praw will look for a file called praw.ini that contains your credentials
@@ -10,7 +12,7 @@ reddit = praw.Reddit()
 # query about entry, job hunting as a student in Germany
 searches = [
     {
-        "query": '"job" OR "job hunting" OR "finding a job" OR "student job" OR "part time job" AND student AND Berlin',
+        "query": 'job AND Berlin',
         "subreddits": ["berlin", "germany", "de", "expats", "IWantOut", "europe", "AskEurope", "German", "askberliners", "Germany_Jobs"]
     }
 ]
@@ -42,5 +44,5 @@ for search in searches:
             print(f"Post ID {i}: {submission.title} (Author: {submission.author})")  # print post id and title
 
 # save data to JSON
-with open('student_job_hunt_berlin.json', 'w', encoding='utf-8') as f:
+with open('job_berlin.json', 'w', encoding='utf-8') as f:
     json.dump(posts, f, indent=2, ensure_ascii=False)

@@ -1,9 +1,11 @@
 hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming*.jar \
-  -input student_job_hunt_berlin_cleaned.jsonl \
+  -input job_berlin_cleaned.jsonl \
   -output cleaned_jsonl_mapreduce \
   -mapper "python3 mapper.py" \
   -reducer "python3 reducer.py" \
   -file mapper.py \
   -file reducer.py
+
+hdfs dfs -rm -R cleaned_jsonl_mapreduce
 
 hdfs dfs -rm -R user
