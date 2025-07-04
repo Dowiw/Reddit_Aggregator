@@ -7,9 +7,7 @@ import json
 reddit = praw.Reddit()
 # note: praw will look for a file called praw.ini that contains your credentials
 
-# define search parameters
-
-# query about entry, job hunting as a student in Germany
+# query about entry, job hunting in Berlin
 searches = [
     {
         "query": 'job AND Berlin',
@@ -18,7 +16,7 @@ searches = [
 ]
 
 i = 0  # post id counter
-max_posts = 300  # per search
+max_posts = 300  # per search inside subreddit
 
 posts = []
 for search in searches:
