@@ -1,3 +1,6 @@
 .env
 praw.ini
 job_berlin_cleaned.json
+job_berlin_cleaned.jsonl
+job_berlin.json
+part-00000
