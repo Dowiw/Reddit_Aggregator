@@ -1,4 +1,3 @@
 .env
 praw.ini
-job_berlin.json
 job_berlin_cleaned.json
