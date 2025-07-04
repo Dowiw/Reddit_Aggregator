@@ -22,12 +22,6 @@ SHOW config_file;
 -- show hba file for ip permissions
 SHOW hba_file;
 
--- make readonly user
-CREATE USER readonly_user WITH PASSWORD 'readonlypass';
-GRANT CONNECT ON DATABASE "reddit-data" TO readonly_user;
-GRANT USAGE ON SCHEMA public TO readonly_user;
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO readonly_user;
-
 SELECT * FROM reddit_posts;
 
 -- add columns for sentimental analysis
@@ -36,3 +30,6 @@ ADD COLUMN sentiment_title_score DOUBLE PRECISION,
 ADD COLUMN sentiment_selftext_score DOUBLE PRECISION,
 ADD COLUMN sentiment_comments_avg_score DOUBLE PRECISION,
 ADD COLUMN sentiment_label TEXT;
+
+ALTER TABLE reddit_posts
+ADD COLUMN theme TEXT;
