@@ -42,5 +42,5 @@ for search in searches:
             print(f"Post ID {i}: {submission.title} (Author: {submission.author})")  # print post id and title
 
 # save data to JSON
-with open('job_berlin.json', 'w', encoding='utf-8') as f:
+with open('/raws/job_berlin.json', 'w', encoding='utf-8') as f:
     json.dump(posts, f, indent=2, ensure_ascii=False)

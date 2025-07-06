@@ -32,7 +32,7 @@ for post in posts:
     cleaned_posts.append(post)
 
 # save cleaned data
-with open('job_berlin_cleaned.json', 'w', encoding='utf-8') as f:
+with open('/raws/job_berlin_cleaned.json', 'w', encoding='utf-8') as f:
     json.dump(cleaned_posts, f, indent=2, ensure_ascii=False)
 
 # print out the number of posts removed
