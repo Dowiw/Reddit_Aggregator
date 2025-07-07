@@ -1,10 +1,8 @@
 import json
-
-
 # initial cleaner
 
 # load raw data
-with open('student_job_hunt_berlin.json', 'r', encoding='utf-8') as f:
+with open('/raws/job_berlin.json', 'r', encoding='utf-8') as f:
     posts = json.load(f)
 
 cleaned_posts = []
