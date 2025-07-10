@@ -1,0 +1,7 @@
+praw
+psycopg2
+textblob
+yake
+vaderSentiment
+wordcloud
+matplotlib
